@@ -43,7 +43,9 @@ const NewsBlock:React.FC<newsProps> = ({newsData}) => {
             <Card
                 title={
                     <Space direction="vertical">
-                        <Text type= 'secondary' style={{marginBottom:'2px', color:'lightgrey'}}>{newsData.REACH} reach Top Traffic: {newsData.TRAFFIC.map((item) => item.value + ' ' + item.count + ' ')}</Text>
+                        <Text type= 'secondary' style={{marginBottom:'2px', color:'lightgrey'}}>
+                            {newsData.REACH} reach Top Traffic: {newsData.TRAFFIC.map((item) => item.value + ' ' + item.count + ' ')}
+                        </Text>
                         <Title level={5} style={{ marginTop: 4, color:'#1677ff' }}>
                             {newsData.TI}
                         </Title>
@@ -66,14 +68,15 @@ const NewsBlock:React.FC<newsProps> = ({newsData}) => {
 
                         </Checkbox>
                     </Space>
-            }
+                }
             >
                 <Space direction={'vertical'} size={'middle'}>
 
                     <Paragraph ellipsis={{ rows: 3,
                         expandable: true,
                         symbol: <span style={{ color: '#1890ff' }}>Show more</span>,
-                    }} style={{color:'white'}}>
+                    }}
+                               style={{color:'white'}}>
                         {newsData.HIGHLIGHTS.map((item) => (highlightWords(item)))}
                     </Paragraph>
 
@@ -88,6 +91,7 @@ const NewsBlock:React.FC<newsProps> = ({newsData}) => {
                         <Button variant="link" style={{background:'#302f2f',color:'#1677ff'}}>Original Source</Button>
                         <Text style={{color:'lightgrey'}}>Duplicates: 192</Text>
                     </Space>
+
                 </Space>
 
                 <Card type="inner" style={{ marginTop: 16, borderColor:'#1677ff',background:'none' }}>
@@ -111,9 +115,11 @@ const NewsBlock:React.FC<newsProps> = ({newsData}) => {
                         </Space>
                     </Space>
                 </Card>
+
                 <Button size='large'  style={{ marginTop: 8, width: '100%', color:'white', background:'none' }}>
                     View Duplicates
                 </Button>
+
             </Card>
         </div>
     );
